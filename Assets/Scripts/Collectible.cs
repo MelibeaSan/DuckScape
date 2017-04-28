@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Collectible : Objects {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    GameObject container;
+    public GameObject prefab;
+
+    void Start()
+    {
+      
+    }
+   
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        container = FindObjectOfType<Objects>().gameObject;
+    }
 }

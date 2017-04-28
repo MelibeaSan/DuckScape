@@ -6,14 +6,14 @@ public class MouseController : MonoBehaviour {
 
     //Variables
     public LayerMask mask;
-    Interactable inter;
+    Collectible inter;
 
-    // Use this for initialization
+ 
     void Start () {
 		
 	}
 	
-	// Update is called once per frame
+
 	void Update ()
     {
         //Lanzamos continuamente un rayo para controlar la posicion del raton
@@ -21,13 +21,14 @@ public class MouseController : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, mask);
 
         //Pintamos el rayo
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.magenta);
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.magenta);
         if (hit)
         {
-            inter = hit.transform.GetComponent<Interactable>();
+            inter = hit.transform.GetComponent<Collectible>();
             if (inter)
             {
-                Debug.Log(inter.Info());
+                Debug.Log(inter.PopUp());
+                Destroy(inter.gameObject);
             }
         }
     }
