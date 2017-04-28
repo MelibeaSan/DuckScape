@@ -21,13 +21,14 @@ public class MouseController : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, mask);
 
         //Pintamos el rayo
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.magenta);
+        Debug.DrawRay(ray.origin, ray.direction * 20, Color.magenta);
         if (hit)
         {
             inter = hit.transform.GetComponent<Interactable>();
             if (inter)
             {
-                Debug.Log(inter.Info());
+                Debug.Log(inter.PopUp());
+                Destroy(inter.gameObject);
             }
         }
     }

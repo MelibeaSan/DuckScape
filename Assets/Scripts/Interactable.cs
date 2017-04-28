@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class Interactable : Objects
 {
-    public string info;
-
-    public string Info()
-    {
-        return info;
-    }
+    
 }

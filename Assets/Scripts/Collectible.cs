@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Collectible : Objects {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    GameObject container;
+
+    void Start()
+    {
+        container = FindObjectOfType<Objects>().gameObject;
+    }
 }
