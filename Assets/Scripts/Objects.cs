@@ -4,10 +4,12 @@ using UnityEngine;
 
 public abstract class Objects : MonoBehaviour {
 
-    public string info;
+    public string pu;
+    public string name;
+    public Texture2D sprite;
 
-    public string Info()
+    public string PopUp()
     {
-        return info;
+        return pu;
     }
 }
